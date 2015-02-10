@@ -1,5 +1,4 @@
-define(function (require) {
-  'use strict';
+define(['underscore'], function (_) {
 
   // StoreMan - Builds a namespaced object tree within localStorage
   //            API is the same as localStorage (setItem, getItem)
@@ -25,7 +24,7 @@ define(function (require) {
     namespace = namespace || 'app';
     namespace = '_storeman/' + namespace;
     this._keys = namespace.split('.');
-    this._root = this.keys.shift();
+    this._root = this._keys.shift();
   };
 
   StoreMan.prototype = {
